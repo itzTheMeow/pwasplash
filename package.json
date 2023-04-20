@@ -1,25 +1,28 @@
 {
-  "name": "FILL",
+  "name": "pwasplash",
   "version": "0.0.1",
-  "description": "FILL",
+  "description": "A small utility to autogenerate iOS PWA splash images.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "npm run build && node .",
+    "pub": "npm run build && pnpm publish",
     "build": "tsc -b tsconfig.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itzTheMeow/FILL.git"
+    "url": "git+https://github.com/itzTheMeow/pwasplash.git"
   },
   "author": "Meow",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/itzTheMeow/FILL/issues"
+    "url": "https://github.com/itzTheMeow/pwasplash/issues"
   },
-  "homepage": "https://github.com/itzTheMeow/FILL#readme",
+  "homepage": "https://github.com/itzTheMeow/pwasplash#readme",
   "devDependencies": {
-    "@types/node": "^18.7.18",
-    "typescript": "^4.8.3"
-  }
+    "@types/node": "^18.15.12",
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "dist/*"
+  ]
 }
