@@ -3,12 +3,14 @@
  * @param logoPath Loaded image element, canvas, or the URL of an image to load.
  * @param options Options for splash generation.
  * @param options.background Background color for the splash image. (defaults to the computed background-color of the `body` tag)
+ * @param options.crossOrigin Set crossorigin to anonymous on the loaded image.
  * @param options.scale Scale of the icon relative to the background. (1 is full-width, 3 is 1/3 width)
  */
 export default async function generateSplash(
   logoPath: HTMLImageElement | HTMLCanvasElement | string,
   options?: {
     background?: string;
+    crossOrigin?: boolean;
     scale?: number;
   }
 ) {
@@ -17,6 +19,7 @@ export default async function generateSplash(
         ? await new Promise<HTMLImageElement>((r) => {
             const img = new Image();
             img.onload = () => r(img);
+            if (options.crossOrigin) img.crossOrigin = "anonymous";
             img.src = logoPath;
           })
         : logoPath,
